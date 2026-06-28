@@ -1,0 +1,14 @@
+{
+    "transactions": {
+        "1": {
+            "uid": 1,
+            "amount": 100,
+            "note": "Just for gf"
+        },
+        "2": {
+            "uid": 2,
+            "amount": 200,
+            "note": "Food"
+        }
+    }
+}
