@@ -32,3 +32,4 @@ class TrxnResponse(BaseModel):
     type: TrxnType
     category: TrxnCategory
     note: str
+    date: str
