@@ -2,6 +2,7 @@ from fastapi import APIRouter
 from models import TrxnCreate, TrxnResponse, TrxnUpdate, TrxnCategory, TrxnType
 from database import load_db, save_db
 from fastapi import HTTPException
+from datetime import date
 
 transaction_router = APIRouter()
 
@@ -57,7 +58,8 @@ def create_transaction(trxn : TrxnCreate):
         'amount':trxn.amount,
         'type': trxn.type,
         'category': trxn.category,
-        'note':trxn.note
+        'note':trxn.note,
+        'date': str(date.today())
     }
     save_db(data)
     return transactions[ str(id) ]
