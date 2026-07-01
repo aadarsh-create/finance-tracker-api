@@ -1,5 +1,3 @@
 __pycache__
 .venv
 .env
-sample_db.json
-tests.py
