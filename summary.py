@@ -26,21 +26,19 @@ def get_summary():
 def get_monthly_summary():
 
     transactions = load_db()['transactions']
-    y,m,d = str(date.today()).split("-")
-    current_month = f'{y}-{m}'
+    summary = {}
 
-    current_transactions = [transaction for transaction in transactions.values() if current_month in transaction['date' ]]
+    for trxn in transactions.values():
+        month = trxn['date'][:7]  # "2026-01", "2026-02" etc
 
-    type = ['income','expense']
-    summary={
-        'this month':current_month
-    }
+        if month not in summary:
+            summary[month] = {"income": 0, "expense": 0, "net": 0}
 
-    for tp in type:
-        amount = [ trnx['amount'] for trnx in current_transactions if trnx['type']==tp]
-        summary[tp] = sum(amount)
+        summary[month][trxn['type']] += trxn['amount']
 
-    summary['net'] = summary['income'] - summary['expense']
+    for month in summary:
+        summary[month]['net'] = summary[month]['income'] - summary[month]['expense']
+
     return summary
 
 
