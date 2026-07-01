@@ -4,6 +4,11 @@ A REST API to track personal income and expenses — with filtering, monthly sum
 
 Built with **FastAPI** + **Python**
 
+---
+
+### Live Demo- https://finance-tracker-api-wxtr.onrender.com/docs
+
+
 ![Swagger UI](/images/swagger_ui.png)
 
 ---
@@ -73,8 +78,3 @@ API docs → http://127.0.0.1:8000/docs
 
 ## Note
 Uses file-based JSON storage. Data resets on redeploy — intentional for a portfolio project.
-
----
-
-## Live Demo
-[Coming soon]
