@@ -33,3 +33,16 @@ class TrxnResponse(BaseModel):
     category: TrxnCategory
     note: str
     date: str
+
+class Description(BaseModel):
+    description: str
+
+class returnCategory(BaseModel):
+    description: str
+    category: str
+    confidence : float
+
+class returnType(BaseModel):
+    description: str
+    type: str
+    confidence : float
